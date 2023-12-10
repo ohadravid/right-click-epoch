@@ -4,7 +4,11 @@
     "version": "1.0",
     "manifest_version": 3,
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "clipboardWrite",
+        "activeTab",
+        "tabs",
+        "scripting"
     ],
     "host_permissions": [
         "http://*/*",
