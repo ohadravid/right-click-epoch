@@ -1,0 +1,26 @@
+{
+    "name": "right-click-epoch",
+    "description": "Quickly convert a date to epoch time by right clicking on it.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "main.js"
+    }
+}
