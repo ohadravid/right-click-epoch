@@ -102,12 +102,10 @@ function copyToClipboard(text) {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id },
             function: function (text) {
-                const input = document.createElement('input');
-                document.body.appendChild(input);
-                input.value = text;
-                input.select();
-                document.execCommand('copy');
-                document.body.removeChild(input);
+                navigator.clipboard.writeText(text).then(function () {
+                }).catch(function (err) {
+                    console.error('Could not copy text: ', err);
+                });
             },
             args: [text],
         });
